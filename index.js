@@ -6,21 +6,15 @@ const port = process.env.PORT || 3000;
 const MongoClient = require('mongodb').MongoClient
 const assert = require('assert')
 
-const { db_credentials } = require('./config')
-
-
-const { user, password, host, db_port, database_name } = db_credentials
-// const namespace= database_name
-
-const url = `mongodb://${user}:${password}@${host}:${db_port}/${database_name}`
+const { DB_URL, DB_NAME } = require('./config')
 
 let db = null
 
-MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
+MongoClient.connect(DB_URL, { useNewUrlParser: true }, (err, client) => {
 	assert.equal(null, err)
 	console.log('Successfully Connected')
 	
-	db = client.db(database_name)
+	db = client.db(DB_NAME)
 })
 
 
