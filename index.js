@@ -27,11 +27,10 @@ app.use(cors({
 app.get('/hero_counters', async (req, res) => {
 	
 	try {
-		db.listCollections().toArray(function(err, collInfos) {
+		// db.listCollections().toArray(function(err, collInfos) {
 		    // collInfos is an array of collection info objects that look like:
 		    // { name: 'test', options: {} }
-		    console.log(collInfos)
-		});
+		// });
 
 		const counters = await db.collection('hero_counters')
 		counters.find({}).toArray((err, items) => {
