@@ -19,10 +19,8 @@ MongoClient.connect(DB_URL, { useNewUrlParser: true }, (err, client) => {
 	db = client.db(DB_NAME)
 })
 
-app.use(cors({
-  origin: ['http://localhost:3000', 'https://drafterino-web.herokuapp.com/', 'http://drafterino-web.herokuapp.com/']
-}));
-
+// Allow all
+app.use(cors())
 
 app.get('/hero_counters', async (req, res) => {
 	
