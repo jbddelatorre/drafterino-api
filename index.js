@@ -20,17 +20,16 @@ MongoClient.connect(DB_URL, { useNewUrlParser: true }, (err, client) => {
 })
 
 app.use(cors({
-  origin: 'http://localhost:3000', 'https://drafterino-web.herokuapp.com/'
+  origin: ['http://localhost:3000', 'https://drafterino-web.herokuapp.com/', 'http://drafterino-web.herokuapp.com/']
 }));
 
 
 app.get('/hero_counters', async (req, res) => {
 	
 	try {
-		// db.listCollections().toArray(function(err, collInfos) {
-		    // collInfos is an array of collection info objects that look like:
-		    // { name: 'test', options: {} }
-		// });
+		db.listCollections().toArray(function(err, collInfos) {
+
+		});
 
 		const counters = await db.collection('hero_counters')
 		counters.find({}).toArray((err, items) => {
