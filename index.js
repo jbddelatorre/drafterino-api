@@ -20,7 +20,7 @@ MongoClient.connect(DB_URL, { useNewUrlParser: true }, (err, client) => {
 })
 
 app.use(cors({
-  origin: 'http://localhost:3000'
+  origin: 'http://localhost:3000', 'https://drafterino-web.herokuapp.com/'
 }));
 
 
