@@ -4,7 +4,8 @@
   "description": "API for drafterino statistics",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon index.js"
+    "server": "nodemon index.js",
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
